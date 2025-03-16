@@ -14,6 +14,7 @@ import {
   StatusBar,
   StyleSheet,
   Text,
+  TextInput,
   useColorScheme,
   View,
 } from 'react-native';
@@ -27,7 +28,7 @@ import UserData from './components/UserData'
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
-  const [name , setName] =  useState('Shukumar')
+  const [name , setName] =  useState('')
 
 
   const backgroundStyle = {
@@ -35,9 +36,8 @@ function App(): React.JSX.Element {
   };
 
   const fruit = (val : string)=>{
-    // Alert.alert("Button Pressed!", val);
+    Alert.alert("Button Pressed!", val);
     setName(val)
-    console.warn(val)
   }
 
 
@@ -57,6 +57,9 @@ function App(): React.JSX.Element {
       <Text style={styles.textStyle}>Hello Style from react native</Text>
       <Text style={styles.textStyle}>Hello Style from react native</Text>
       <Text style={styles.textStyle}>Hello Style from react native</Text>
+
+      <TextInput style={styles.textInput}  onChangeText={(text)=> setName(text)} placeholder='Enter Your Name' />
+
     </View>
   );
 }
@@ -72,6 +75,13 @@ const styles  = StyleSheet.create({
     borderRadius : 10,
     textAlignVertical : "center",
     textAlign : "center"
+  },
+  textInput  : {
+     fontSize : 18 , 
+     color : 'red',
+     borderWidth : 2,
+     marginTop : 10,
+     borderRadius : 10
   }
 })
 
