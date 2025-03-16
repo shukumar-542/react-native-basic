@@ -60,7 +60,6 @@ function App(): React.JSX.Element {
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-    
   };
 
   /*
@@ -75,18 +74,26 @@ function App(): React.JSX.Element {
   const safePadding = '5%';
 
   return (
-    <View style={{padding : 20}}>
+    <View style={{padding: 20}}>
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      <Text style={{marginTop : 25, fontSize : 30}}>Hello</Text>
-      <Text style={{ fontSize : 20}}>Hello</Text>
-      <Text style={{ fontSize : 18}}>Hello text component</Text>
-      <Button title='Press Me !'></Button>
+     <UserData/>
+      <Button title="Press Me !"></Button>
     </View>
   );
 }
+
+const UserData = () => {
+  return (
+    <View>
+      <Text style={{marginTop: 25, fontSize: 30}}>Name : Shukumar</Text>
+      <Text style={{fontSize: 20}}>Age : 29</Text>
+      <Text style={{fontSize: 18}}>Hello text component</Text>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   sectionContainer: {
