@@ -5,9 +5,10 @@
  * @format
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import type {PropsWithChildren} from 'react';
 import {
+  Alert,
   Button,
   ScrollView,
   StatusBar,
@@ -19,59 +20,28 @@ import {
 
 import {
   Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import UserData from './components/UserData'
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
 
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
+  const [name , setName] =  useState('Shukumar')
+
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-  /*
-   * To keep the template simple and small we're adding padding to prevent view
-   * from rendering under the System UI.
-   * For bigger apps the reccomendation is to use `react-native-safe-area-context`:
-   * https://github.com/AppAndFlow/react-native-safe-area-context
-   *
-   * You can read more about it here:
-   * https://github.com/react-native-community/discussions-and-proposals/discussions/827
-   */
-  const safePadding = '5%';
+  const fruit = (val : string)=>{
+    // Alert.alert("Button Pressed!", val);
+    setName(val)
+    console.warn(val)
+  }
+
+
+
 
   return (
     <View style={{padding: 20}}>
@@ -79,21 +49,13 @@ function App(): React.JSX.Element {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-     <UserData/>
-      <Button title="Press Me !"></Button>
+      <Text style={{fontSize : 25 , marginTop : 20}}>{name}</Text>
+      <UserData/>
+      <Button onPress={()=>fruit("Shukunar Ghosh")} title="Press Me !" color={"green"} ></Button>
     </View>
   );
 }
 
-const UserData = () => {
-  return (
-    <View>
-      <Text style={{marginTop: 25, fontSize: 30}}>Name : Shukumar</Text>
-      <Text style={{fontSize: 20}}>Age : 29</Text>
-      <Text style={{fontSize: 18}}>Hello text component</Text>
-    </View>
-  );
-};
 
 const styles = StyleSheet.create({
   sectionContainer: {
