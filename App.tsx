@@ -52,28 +52,27 @@ function App(): React.JSX.Element {
       <Text style={{fontSize : 25 , marginTop : 20}}>{name}</Text>
       <UserData/>
       <Button onPress={()=>fruit("Shukunar Ghosh")} title="Press Me !" color={"green"} ></Button>
+
+
+      <Text style={styles.textStyle}>Hello Style from react native</Text>
+      <Text style={styles.textStyle}>Hello Style from react native</Text>
+      <Text style={styles.textStyle}>Hello Style from react native</Text>
     </View>
   );
 }
 
 
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+const styles  = StyleSheet.create({
+  textStyle  : {
+    marginTop : 20,
+    fontSize : 20,
+    backgroundColor : "gray",
+    color : 'white',
+    padding : 10,
+    borderRadius : 10,
+    textAlignVertical : "center",
+    textAlign : "center"
+  }
+})
 
 export default App;
