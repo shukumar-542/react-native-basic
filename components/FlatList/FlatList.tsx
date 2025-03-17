@@ -15,6 +15,30 @@ const FlatListItem = () => {
             id : 3,
             name : 'Kohli'
         },
+        {
+            id : 4,
+            name : 'Kohli'
+        },
+        {
+            id : 5,
+            name : 'Kohli'
+        },
+        {
+            id : 6,
+            name : 'Kohli'
+        },
+        {
+            id : 7,
+            name : 'Kohli'
+        },
+        {
+            id : 8,
+            name : 'Kohli'
+        },
+        {
+            id : 9,
+            name : 'Kohli'
+        },
     ]
   return (
     <View style={{marginTop : 20}}>
@@ -32,7 +56,7 @@ const styles = StyleSheet.create({
         backgroundColor : 'blue',
         marginTop : 5,
         color : "white",
-        padding : 2,
+        padding : 10,
         borderRadius : 5
     }
 })

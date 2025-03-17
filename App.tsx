@@ -5,7 +5,7 @@
  * @format
  */
 
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
   Alert,
   Button,
@@ -18,72 +18,112 @@ import {
   View,
 } from 'react-native';
 
-import {
-  Colors,
-} from 'react-native/Libraries/NewAppScreen';
-import UserData from './components/UserData'
+import {Colors} from 'react-native/Libraries/NewAppScreen';
+import UserData from './components/UserData';
 import FlatList from './components/FlatList/FlatList';
 import FlatListItem from './components/FlatList/FlatList';
 
-
+const data = [
+  {
+    id: 1,
+    name: 'shukumar',
+  },
+  {
+    id: 2,
+    name: 'Rohit',
+  },
+  {
+    id: 3,
+    name: 'Kohli',
+  },
+  {
+    id: 4,
+    name: 'Kohli',
+  },
+  {
+    id: 5,
+    name: 'Kohli',
+  },
+  {
+    id: 6,
+    name: 'Kohli',
+  },
+  {
+    id: 7,
+    name: 'Kohli',
+  },
+  {
+    id: 8,
+    name: 'Kohli',
+  },
+  {
+    id: 9,
+    name: 'Kohli',
+  },
+];
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
-  const [name , setName] =  useState('')
-
+  const [name, setName] = useState('');
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-  const fruit = (val : string)=>{
-    Alert.alert("Button Pressed!", val);
-    setName(val)
-  }
-
-
-
+  const fruit = (val: string) => {
+    Alert.alert('Button Pressed!', val);
+    setName(val);
+  };
 
   return (
+      <ScrollView>
     <View style={{padding: 20}}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <Text style={{fontSize : 25 , marginTop : 20}}>{name}</Text>
-      <UserData/>
-      <Button onPress={()=>fruit("Shukunar Ghosh")} title="Press Me !" color={"green"} ></Button>
+        <StatusBar
+          barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+          backgroundColor={backgroundStyle.backgroundColor}
+        />
+        <Text style={{fontSize: 25, marginTop: 20}}>{name}</Text>
+        <UserData />
+        <Button
+          onPress={() => fruit('Shukunar Ghosh')}
+          title="Press Me !"
+          color={'green'}></Button>
 
+        <Text style={styles.textStyle}>Hello Style from react native</Text>
+        <Text style={styles.textStyle}>Hello Style from react native</Text>
+        <Text style={styles.textStyle}>Hello Style from react native</Text>
 
-      <Text style={styles.textStyle}>Hello Style from react native</Text>
-      <Text style={styles.textStyle}>Hello Style from react native</Text>
-      <Text style={styles.textStyle}>Hello Style from react native</Text>
-
-      <TextInput style={styles.textInput}  onChangeText={(text)=> setName(text)} placeholder='Enter Your Name' />
-      <FlatListItem/>
+        <TextInput
+          style={styles.textInput}
+          onChangeText={text => setName(text)}
+          placeholder="Enter Your Name"
+        />
+        {data?.map(item => (
+          <Text style={styles.textStyle}>{item?.name}</Text>
+        ))}
     </View>
+      </ScrollView>
   );
 }
 
-
-const styles  = StyleSheet.create({
-  textStyle  : {
-    marginTop : 20,
-    fontSize : 20,
-    backgroundColor : "gray",
-    color : 'white',
-    padding : 10,
-    borderRadius : 10,
-    textAlignVertical : "center",
-    textAlign : "center"
+const styles = StyleSheet.create({
+  textStyle: {
+    marginTop: 20,
+    fontSize: 20,
+    backgroundColor: 'gray',
+    color: 'white',
+    padding: 10,
+    borderRadius: 10,
+    textAlignVertical: 'center',
+    textAlign: 'center',
   },
-  textInput  : {
-     fontSize : 18 , 
-     color : 'red',
-     borderWidth : 2,
-     marginTop : 10,
-     borderRadius : 10
-  }
-})
+  textInput: {
+    fontSize: 18,
+    color: 'red',
+    borderWidth: 2,
+    marginTop: 10,
+    borderRadius: 10,
+  },
+});
 
 export default App;
