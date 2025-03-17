@@ -20,8 +20,7 @@ import {
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import UserData from './components/UserData';
-import FlatList from './components/FlatList/FlatList';
-import FlatListItem from './components/FlatList/FlatList';
+import { DynamicGrid } from './components/DynamicGrid/DynamicGrid';
 
 const data = [
   {
@@ -40,26 +39,7 @@ const data = [
     id: 4,
     name: 'Kohli',
   },
-  {
-    id: 5,
-    name: 'Kohli',
-  },
-  {
-    id: 6,
-    name: 'Kohli',
-  },
-  {
-    id: 7,
-    name: 'Kohli',
-  },
-  {
-    id: 8,
-    name: 'Kohli',
-  },
-  {
-    id: 9,
-    name: 'Kohli',
-  },
+
 ];
 
 function App(): React.JSX.Element {
@@ -70,7 +50,7 @@ function App(): React.JSX.Element {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-  const fruit = (val: string) => {
+  const fruit = (val: string) => { 
     Alert.alert('Button Pressed!', val);
     setName(val);
   };
@@ -90,8 +70,6 @@ function App(): React.JSX.Element {
           color={'green'}></Button>
 
         <Text style={styles.textStyle}>Hello Style from react native</Text>
-        <Text style={styles.textStyle}>Hello Style from react native</Text>
-        <Text style={styles.textStyle}>Hello Style from react native</Text>
 
         <TextInput
           style={styles.textInput}
@@ -101,6 +79,8 @@ function App(): React.JSX.Element {
         {data?.map(item => (
           <Text style={styles.textStyle}>{item?.name}</Text>
         ))}
+
+        <DynamicGrid/>
     </View>
       </ScrollView>
   );
