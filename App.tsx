@@ -6,7 +6,6 @@
  */
 
 import React, { useState } from 'react';
-import type {PropsWithChildren} from 'react';
 import {
   Alert,
   Button,
@@ -23,6 +22,8 @@ import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
 import UserData from './components/UserData'
+import FlatList from './components/FlatList/FlatList';
+import FlatListItem from './components/FlatList/FlatList';
 
 
 
@@ -59,7 +60,7 @@ function App(): React.JSX.Element {
       <Text style={styles.textStyle}>Hello Style from react native</Text>
 
       <TextInput style={styles.textInput}  onChangeText={(text)=> setName(text)} placeholder='Enter Your Name' />
-
+      <FlatListItem/>
     </View>
   );
 }
