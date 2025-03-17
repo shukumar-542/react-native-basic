@@ -38,13 +38,10 @@ export const DynamicGrid = () => {
   return (
     <View style={{flex : 1 , flexDirection : 'row' , marginTop : 20 , flexWrap : 'wrap' }}>
         {
-            data?.map(item => <Text style={styles.gridStyle} key={item?.id}>{item?.name}</Text>)
+        data?.map(item => <Text style={styles.gridStyle} key={item?.id}>{item?.name}</Text>)
         }
     </View>
   )
-
-
-
 }
 const styles = StyleSheet.create({
     gridStyle : {

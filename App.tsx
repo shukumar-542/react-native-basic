@@ -20,7 +20,8 @@ import {
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import UserData from './components/UserData';
-import { DynamicGrid } from './components/DynamicGrid/DynamicGrid';
+import {DynamicGrid} from './components/DynamicGrid/DynamicGrid';
+import Selection from './components/Selection/Selection';
 
 const data = [
   {
@@ -39,7 +40,6 @@ const data = [
     id: 4,
     name: 'Kohli',
   },
-
 ];
 
 function App(): React.JSX.Element {
@@ -50,19 +50,20 @@ function App(): React.JSX.Element {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-  const fruit = (val: string) => { 
+  const fruit = (val: string) => {
     Alert.alert('Button Pressed!', val);
     setName(val);
   };
 
   return (
-      <ScrollView>
-    <View style={{padding: 20}}>
+    // <ScrollView>
+      <View style={{padding: 20}}>
         <StatusBar
           barStyle={isDarkMode ? 'light-content' : 'dark-content'}
           backgroundColor={backgroundStyle.backgroundColor}
         />
         <Text style={{fontSize: 25, marginTop: 20}}>{name}</Text>
+
         <UserData />
         <Button
           onPress={() => fruit('Shukunar Ghosh')}
@@ -76,13 +77,14 @@ function App(): React.JSX.Element {
           onChangeText={text => setName(text)}
           placeholder="Enter Your Name"
         />
-        {data?.map(item => (
+        {/* {data?.map(item => (
           <Text style={styles.textStyle}>{item?.name}</Text>
-        ))}
+        ))} */}
 
-        <DynamicGrid/>
-    </View>
-      </ScrollView>
+        {/* <DynamicGrid /> */}
+        <Selection/>
+      </View>
+    // </ScrollView>
   );
 }
 
