@@ -22,6 +22,7 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 import UserData from './components/UserData';
 import {DynamicGrid} from './components/DynamicGrid/DynamicGrid';
 import Selection from './components/Selection/Selection';
+import ComponentDidUpdate from './components/ComponentDidUpdate/ComponentDidUpdate';
 
 const data = [
   {
@@ -83,6 +84,7 @@ function App(): React.JSX.Element {
 
         {/* <DynamicGrid /> */}
         <Selection/>
+        <ComponentDidUpdate/>
       </View>
     // </ScrollView>
   );
