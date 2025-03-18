@@ -11,6 +11,7 @@ const ComponentDidUpdate = () => {
 
   return (
     <View>
+        
         <Text>Component did Mount {count}</Text>
         <Text>Data {data}</Text>
         <Button title='Update Counter' onPress={()=> setCount(count + 1)} />

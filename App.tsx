@@ -23,6 +23,7 @@ import UserData from './components/UserData';
 import {DynamicGrid} from './components/DynamicGrid/DynamicGrid';
 import Selection from './components/Selection/Selection';
 import ComponentDidUpdate from './components/ComponentDidUpdate/ComponentDidUpdate';
+import Unmount from './components/Unmount/Unmount';
 
 const data = [
   {
@@ -84,7 +85,8 @@ function App(): React.JSX.Element {
 
         {/* <DynamicGrid /> */}
         <Selection/>
-        <ComponentDidUpdate/>
+        {/* <ComponentDidUpdate/> */}
+        {/* <Unmount/> */}
       </View>
     // </ScrollView>
   );
