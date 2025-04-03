@@ -14,6 +14,7 @@ import {
   StyleSheet,
   Text,
   TextInput,
+  TouchableHighlight,
   useColorScheme,
   View,
 } from 'react-native';
@@ -24,6 +25,7 @@ import {DynamicGrid} from './components/DynamicGrid/DynamicGrid';
 import Selection from './components/Selection/Selection';
 import ComponentDidUpdate from './components/ComponentDidUpdate/ComponentDidUpdate';
 import Unmount from './components/Unmount/Unmount';
+import ResponsiveFlex from './components/ResponsiveFlex/ResponsiveFlex';
 
 const data = [
   {
@@ -59,35 +61,45 @@ function App(): React.JSX.Element {
 
   return (
     // <ScrollView>
-      <View style={{padding: 20}}>
-        <StatusBar
-          barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-          backgroundColor={backgroundStyle.backgroundColor}
-        />
-        <Text style={{fontSize: 25, marginTop: 20}}>{name}</Text>
+    <View style={{padding: 20}}>
+      <StatusBar
+        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+        backgroundColor={backgroundStyle.backgroundColor}
+      />
+      <Text style={{fontSize: 25, marginTop: 20}}>{name}</Text>
 
-        <UserData />
-        <Button
-          onPress={() => fruit('Shukunar Ghosh')}
-          title="Press Me !"
-          color={'green'}></Button>
+      <UserData />
+      <Button
+        onPress={() => fruit('Shukunar Ghosh')}
+        title="Press Me !"
+        color={'green'}></Button>
 
-        <Text style={styles.textStyle}>Hello Style from react native</Text>
+      <Text style={styles.textStyle}>Hello Style from react native</Text>
 
-        <TextInput
-          style={styles.textInput}
-          onChangeText={text => setName(text)}
-          placeholder="Enter Your Name"
-        />
-        {/* {data?.map(item => (
+      <TextInput
+        style={styles.textInput}
+        onChangeText={text => setName(text)}
+        placeholder="Enter Your Name"
+      />
+      {/* {data?.map(item => (
           <Text style={styles.textStyle}>{item?.name}</Text>
         ))} */}
 
-        {/* <DynamicGrid /> */}
-        <Selection/>
-        {/* <ComponentDidUpdate/> */}
-        {/* <Unmount/> */}
-      </View>
+      {/* <DynamicGrid /> */}
+      <Selection />
+      {/* <ComponentDidUpdate/> */}
+      {/* <Unmount/> */}
+      <ResponsiveFlex />
+
+      {/* Success button */}
+      <TouchableHighlight>
+        <Text style={[styles.button, styles.success]}>Success</Text>
+      </TouchableHighlight>
+      {/* Common button */}
+      <TouchableHighlight>
+        <Text style={styles.button}>Buttons</Text>
+      </TouchableHighlight>
+    </View>
     // </ScrollView>
   );
 }
@@ -110,6 +122,19 @@ const styles = StyleSheet.create({
     marginTop: 10,
     borderRadius: 10,
   },
+  button : {
+    backgroundColor : 'red',
+    color : "white",
+    textAlign :  "center",
+    padding : 10,
+    borderRadius : 10,
+    shadowColor : "green",
+    elevation : 10,
+    marginTop : 10
+  },
+  success : {
+    backgroundColor : "green"
+  }
 });
 
 export default App;
