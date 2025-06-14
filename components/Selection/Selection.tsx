@@ -10,12 +10,12 @@ const Selection = () => {
     },
     {
       id: 2,
-      name: 'Virat Kohli',
+      name: 'Virat Kohli fafasrf',
       data: ['Batter', 'Bowler'],
     },
     {
       id: 3,
-      name: 'Hardik Pandiya',
+      name: 'Hardik Pandiya ',
       data: ['Batter', 'All rounder'],
     },
   ];
